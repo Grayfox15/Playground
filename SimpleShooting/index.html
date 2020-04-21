@@ -9,13 +9,27 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      function onClick() {
+      function onClickMotion() {
         // feature detect
         if (typeof DeviceMotionEvent.requestPermission === 'function') {
           DeviceMotionEvent.requestPermission()
             .then(permissionState => {
               if (permissionState === 'granted') {
                 window.addEventListener('devicemotion', () => {});
+              }
+            })
+            .catch(console.error);
+        } else {
+          // handle regular non iOS 13+ devices
+        }
+      }
+      function onClickOrientation() {
+        // feature detect
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+          DeviceOrientationEvent.requestPermission()
+            .then(permissionState => {
+              if (permissionState === 'granted') {
+                window.addEventListener('deviceorientation', () => {});
               }
             })
             .catch(console.error);
@@ -31,7 +45,8 @@
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="onClick()"></div>
+        <div class="fullscreen" onclick="onClickMotion()"></div>
+        <div class="fullscreen" onclick="onClickOrientation()"></div>
         <div class="title">Simple Shooting</div>
       </div>
     </div>
