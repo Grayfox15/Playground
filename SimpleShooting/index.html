@@ -9,7 +9,6 @@
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="Build/UnityLoader.js"></script>
     <script>
-      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/SimpleShooting.json", {onProgress: UnityProgress});
       function onClick() {
         // feature detect
         if (typeof DeviceOrientationEvent.requestPermission === 'function') {
@@ -24,6 +23,8 @@
           // handle regular non iOS 13+ devices
         }
       }
+      var unityInstance = UnityLoader.instantiate("unityContainer", "Build/SimpleShooting.json", {onProgress: UnityProgress});
+      
     </script>
   </head>
   <body>
@@ -31,7 +32,7 @@
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="onClick"></div>
+        <div class="fullscreen" onclick="onClick()"></div>
         <div class="title">Simple Shooting Test</div>
       </div>
     </div>
