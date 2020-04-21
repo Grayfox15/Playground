@@ -11,11 +11,11 @@
     <script>
       function onClick() {
         // feature detect
-        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
-          DeviceOrientationEvent.requestPermission()
+        if (typeof DeviceMotionEvent.requestPermission === 'function') {
+          DeviceMotionEvent.requestPermission()
             .then(permissionState => {
               if (permissionState === 'granted') {
-                window.addEventListener('deviceorientation', () => {});
+                window.addEventListener('devicemotion', () => {});
               }
             })
             .catch(console.error);
