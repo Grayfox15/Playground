@@ -10,6 +10,20 @@
     <script src="Build/UnityLoader.js"></script>
     <script>
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/SimpleShooting.json", {onProgress: UnityProgress});
+      function onClick() {
+        // feature detect
+        if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+          DeviceOrientationEvent.requestPermission()
+            .then(permissionState => {
+              if (permissionState === 'granted') {
+                window.addEventListener('deviceorientation', () => {});
+              }
+            })
+            .catch(console.error);
+        } else {
+          // handle regular non iOS 13+ devices
+        }
+      }
     </script>
   </head>
   <body>
@@ -17,7 +31,7 @@
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
       <div class="footer">
         <div class="webgl-logo"></div>
-        <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
+        <div class="fullscreen" onclick="onClick"></div>
         <div class="title">Simple Shooting</div>
       </div>
     </div>
