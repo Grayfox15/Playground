@@ -49,5 +49,28 @@
         <div class="title">Simple Shooting</div>
       </div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyCqRZxdt4oyUpvVHH7FbxRgEg1kOC3sd5Y",
+        authDomain: "grayfox15-simpleshooting.firebaseapp.com",
+        databaseURL: "https://grayfox15-simpleshooting.firebaseio.com",
+        projectId: "grayfox15-simpleshooting",
+        storageBucket: "grayfox15-simpleshooting.appspot.com",
+        messagingSenderId: "176563448671",
+        appId: "1:176563448671:web:6485a33221f1867cdda4ea",
+        measurementId: "G-H91YYYTM0F"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
