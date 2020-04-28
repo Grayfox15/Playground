@@ -72,9 +72,34 @@
       firebase.initializeApp(firebaseConfig);
       firebase.analytics();
     </script>
+    
+    // Firestore
     <script src="https://www.gstatic.com/firebasejs/7.14.2/firebase-firestore.js"></script>
-    const firebase = require("firebase");
-    // Required for side-effects
-    require("firebase/firestore");
+    <script>
+      const firebase = require("firebase");
+      // Required for side-effects
+      require("firebase/firestore");
+      
+      // Initialize Cloud Firestore through Firebase
+      firebase.initializeApp({
+        apiKey: "AIzaSyCqRZxdt4oyUpvVHH7FbxRgEg1kOC3sd5Y",
+        authDomain: "grayfox15-simpleshooting.firebaseapp.com",
+        projectId: "grayfox15-simpleshooting"
+      });
+
+      var db = firebase.firestore();
+      
+      db.collection("users").add({
+          first: "Ada",
+          last: "Lovelace",
+          born: 1815
+      })
+      .then(function(docRef) {
+          console.log("Document written with ID: ", docRef.id);
+      })
+      .catch(function(error) {
+          console.error("Error adding document: ", error);
+      });
+    </script>
   </body>
 </html>
