@@ -21,5 +21,29 @@
         <div class="title">DodgeGameDemo</div>
       </div>
     </div>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+         https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyDfwXDkmcFa21hVrvg8JQo17ZAghU0fESg",
+        authDomain: "dodgegame-3639f.firebaseapp.com",
+        databaseURL: "https://dodgegame-3639f.firebaseio.com",
+        projectId: "dodgegame-3639f",
+        storageBucket: "dodgegame-3639f.appspot.com",
+        messagingSenderId: "922555394604",
+        appId: "1:922555394604:web:f224775cac5e8e694c7f89",
+        measurementId: "G-PR137FCMG1"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
